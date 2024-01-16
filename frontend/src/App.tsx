@@ -8,8 +8,14 @@ import { authProvider, apInitialize } from "./authProvider";
 import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
-import { BooksList, BooksCreate, BooksEdit} from "./resources/Books";
-import BooksIcon from "@mui/icons-material/Book"; 
+import { BookList, BookCreate, BookEdit} from "./resources/Book";
+import { AuthorList, AuthorCreate, AuthorEdit} from "./resources/Author";
+import { PublisherList, PublisherCreate, PublisherEdit} from "./resources/Publisher";
+import { GenreList, GenreCreate, GenreEdit} from "./resources/Genre";
+import BookIcon from "@mui/icons-material/Book";
+import AuthorIcon from "@mui/icons-material/Person";
+import PublisherIcon from "@mui/icons-material/Business";
+import GenreIcon from "@mui/icons-material/Category"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -71,12 +77,30 @@ const App = () => (
         dashboard={Dashboard}
         
       >
-    <Resource name="Books" options={{label:"books"}} 
-list={BooksList}
-create={BooksCreate}
-edit={BooksEdit}
+    <Resource name="Book" options={{label:"book"}} 
+list={BookList}
+create={BookCreate}
+edit={BookEdit}
 recordRepresentation="title"
-icon={BooksIcon}/>
+icon={BookIcon}/>
+<Resource name="Author" options={{label:"author"}} 
+list={AuthorList}
+create={AuthorCreate}
+edit={AuthorEdit}
+recordRepresentation="name"
+icon={AuthorIcon}/>
+<Resource name="Publisher" options={{label:"publisher"}} 
+list={PublisherList}
+create={PublisherCreate}
+edit={PublisherEdit}
+recordRepresentation="name"
+icon={PublisherIcon}/>
+<Resource name="Genre" options={{label:"genre"}} 
+list={GenreList}
+create={GenreCreate}
+edit={GenreEdit}
+recordRepresentation="name"
+icon={GenreIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
       {getSuperTokensRoutesForReactRouterDom(reactRouterDom)}
