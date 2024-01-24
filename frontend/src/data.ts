@@ -1,3 +1,3 @@
 
-let data: any = {"defaultData":{"Users":[],"GraphParameters":[]}};
+let data: any = {"defaultData":{"Books":[]}};
 export default data;
