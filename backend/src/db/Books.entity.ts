@@ -13,9 +13,6 @@ Title: string;
 Releasedate: string;
 
 @Column({nullable: true})
-Description: string;
-
-@Column({nullable: true})
 Id: string;
 
 
