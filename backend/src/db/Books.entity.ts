@@ -13,6 +13,9 @@ Title: string;
 Date: string;
 
 @Column({nullable: true})
+Author: string;
+
+@Column({nullable: true})
 Id: string;
 
 
