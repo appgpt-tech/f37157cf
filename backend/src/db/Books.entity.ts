@@ -10,9 +10,6 @@ export class BooksEntity {
 Title: string;
 
 @Column({nullable: true})
-Date: string;
-
-@Column({nullable: true})
 Author: string;
 
 @Column({nullable: true})
